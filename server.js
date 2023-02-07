@@ -17,15 +17,12 @@ mongoose.set('strictQuery', false);
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
 app.use("/api/snorts", snorts);
 
-const port = 1884;
+const port = 1984;
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
