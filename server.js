@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 
+const snorts = require("./routes/api/snorts");
+
 const app = express();
 
 //CORS middleware
@@ -21,6 +23,8 @@ mongoose
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
+
+app.use("/api/snorts", snorts);
 
 const port = 1884;
 

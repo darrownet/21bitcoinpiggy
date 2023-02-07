@@ -25,7 +25,8 @@ const SnortSchema = new Schema({
   },
   snort_text: {
     type: String,
-    required: true
+    required: false,
+    default: ""
   },
   est_block_difficulty: {
     type: String,
@@ -33,4 +34,4 @@ const SnortSchema = new Schema({
   }
 }, { minimize: false });
 
-module.exports = User = mongoose.model("snorts", SnortSchema);
+module.exports = Snort = mongoose.model("snort", SnortSchema);
